@@ -2,6 +2,7 @@ package com.company.projetannuel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
+    private Button boutonLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         EditText edMatricule = findViewById(R.id.editMatricule);
         EditText edPassword = findViewById(R.id.editPassword);
 
-        Button boutonLogin = findViewById(R.id.btnLogin);
+        boutonLogin = findViewById(R.id.btnLogin);
         progressBar = findViewById(R.id.progressBar);
 
         boutonLogin.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +49,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void login(String matricule, String password){
         progressBar.setVisibility(View.VISIBLE);
-        progressBar.setVisibility(View.INVISIBLE);
-        progressBar.setVisibility(View.GONE);
+        boutonLogin.setEnabled(false);
+
+        SharedPreferences session = getSharedPreferences("MySession", 0);
+        session.edit().putBoolean("session_active", true).apply();
     }
 }
