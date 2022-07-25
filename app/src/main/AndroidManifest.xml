@@ -13,32 +13,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetAnnuel"
         tools:targetApi="31">
-
         <activity
-            android:label="Liste travaux"
-            android:parentActivityName=".HomePageActivity"
+            android:parentActivityName=".DetailTravailActivity"
+            android:label="Modifier travail"
+            android:name=".ModifierTravailActivity"
+            android:exported="false" />
+        <activity
+            android:parentActivityName=".LoginActivity"
+            android:label="Modifier profil"
+            android:name=".ModifierProfilActivity"
+            android:exported="false" />
+        <activity
+            android:parentActivityName=".ListeTravailActivity"
+            android:label="Detail travail"
+            android:name=".DetailTravailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListeTravailActivity"
-            android:exported="false" />
-
+            android:exported="false"
+            android:label="Liste travaux"
+            android:parentActivityName=".HomePageActivity" />
         <activity
-            android:label="Profile"
-            android:parentActivityName=".HomePageActivity"
             android:name=".ProfileActivity"
-            android:exported="false" />
-
+            android:exported="false"
+            android:label="Profile"
+            android:parentActivityName=".HomePageActivity" />
         <activity
-            android:label="Ajouter travail"
-            android:parentActivityName=".HomePageActivity"
             android:name=".AjouterTravailActivity"
-            android:exported="false" />
-
+            android:exported="false"
+            android:label="Ajouter travail"
+            android:parentActivityName=".HomePageActivity" />
         <activity
-            android:label="Login"
             android:name=".LoginActivity"
-            android:exported="false" />
-
+            android:exported="false"
+            android:label="Login" />
         <activity
-
             android:name=".HomePageActivity"
             android:exported="true">
             <intent-filter>
